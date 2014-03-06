@@ -22,11 +22,11 @@ monikers bearing the appendage 33, then it mighta been me that done it.
 
 Plus it sounds cool and I don't speak [Leet](http://en.wikipedia.org/wiki/Leet)
 so I couldn't make it any kewler.  I do enjoy hacking though, and now I'm
-[probably on some ridiculous list](), but it's important that [people know what
-the terms hacker, hack, and hacking really mean](), because
-[words matter alot]().  I hack quite alot, and I hope to make some money doing
-so under the guise of hack33—on the side at the very least. Thusly, hack33.
+[probably on some ridiculous list]() for saying so, but it's important
+that [people know what the terms hacker, hack, and hacking really mean](),
+because [words matter alot]().  I hack quite alot, and I hope to make some money
+doing so under the guise of hack33—on the side at least. Thusly, hack33.
 
-And now in the words of the great Stan Lee:
+And so I conclude in the words of the great Stan Lee:
 
 > 'Nuff said
