@@ -1,0 +1,17 @@
+# source this in .zshrc or .bashrc
+alias ackk=ack_alias
+alias bdu="brew doctor && brew update"
+alias cpdate="date|pbcopy"
+alias cpip="ifconfig | grep en1 -A1 | grep -Eo 'inet\ [1-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -c 6- | xargs -I {} echo {}:'3000' | pbcopy"
+alias cpsdate="date +'%Y-%m-%d'|pbcopy"
+alias cptime="date +'%r'|pbcopy"
+alias df33="atom ~/Projects/mkelley33/git/dotfiles33/."
+alias duh='du -cms * | sort -rn'
+alias io="atom"
+alias ioo="atom ."
+alias kcmd="echo '⌘'|pbcopy"
+alias kopt="echo '⌥'|pbcopy"
+alias kshift="echo '⇧'|pbcopy"
+alias lss="ls -lAhFtG"
+alias omz="atom ~/.oh-my-zsh"
+alias zc="atom ~/.zshrc"
