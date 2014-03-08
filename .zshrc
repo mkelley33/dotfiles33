@@ -97,7 +97,6 @@ export DEFAULT_USER="mkelley33"
 
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
-export HISTCONTROL=ignoreboth
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups
@@ -111,3 +110,7 @@ export LC_ALL="en_US.UTF-8"
 source $ZSH/oh-my-zsh.sh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Load and run compinit
+autoload -U compinit
+compinit -i
