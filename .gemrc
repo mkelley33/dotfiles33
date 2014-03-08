@@ -1,2 +1,11 @@
+# http://docs.rubygems.org/read/chapter/11
 install: --no-rdoc --no-ri
 update: --no-rdoc --no-ri
+backtrace: true
+benchmark: false
+bulk_threshold: 32,768
+sources:
+- http://gems.rubyforge.org/
+- http://rubygems.org/
+update_sources: true
+verbose: true
