@@ -99,6 +99,7 @@ export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
+export SAVEHIST=$HISTSIZE
 export HISTCONTROL=ignoredups
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
