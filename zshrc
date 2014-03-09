@@ -43,7 +43,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # source each of the them:
 other_dotfiles=('.zsh_functions' '.aliases')
 for f in $other_dotfiles; do
-  [[ -f ~/$f ]] && . ~/$f && echo $f
+  [[ -f ~/$f ]] && . ~/$f # && echo $f
 done
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -96,7 +96,8 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 export DEFAULT_USER="mkelley33"
 
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-
+export PROJECTS=$HOME/Projects/mkelley33/git
+export DOTFILES=$PROJECTS/dotfiles33
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 export SAVEHIST=$HISTSIZE

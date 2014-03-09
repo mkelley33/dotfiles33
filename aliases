@@ -24,6 +24,7 @@ alias kcmd="echo '⌘'|pbcopy"
 alias kopt="echo '⌥'|pbcopy"
 alias kshift="echo '⇧'|pbcopy"
 alias lss="ls -lAhFtG"
+alias lns='la|ack "\-\>"'
 alias omz="atom ~/.oh-my-zsh"
 alias p="cd ~/Projects/mkelley33/git/"
 alias prc="pry -r config/environment.rb"
