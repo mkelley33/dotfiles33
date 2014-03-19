@@ -1,0 +1,15 @@
+gem-wrappers
+rubygems-bundler
+bundler
+rake
+rvm
+awesome_print
+pry
+pry-doc
+rdoc
+yard
+method_source
+psych
+minitest
+json
+coderay
