@@ -184,7 +184,7 @@ cscope.in.out
 cscope.po.out
 
 # OS X
-DS_Store
+.DS_Store
 .AppleDouble
 .LSOverride
 
