@@ -108,6 +108,7 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 # Prefer US English and use UTF-8
 export LANG="en_US"
 export LC_ALL="en_US.UTF-8"
+export TZ=America/New_York
 
 source $ZSH/oh-my-zsh.sh
 
