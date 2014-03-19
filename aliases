@@ -30,3 +30,4 @@ alias p="cd ~/Projects/mkelley33/git/"
 alias prc="pry -r config/environment.rb"
 alias t=tmux
 alias zc="atom ~/.zshrc"
+alias utc="echo `date -uj` `date +%z` | pbcopy && pbpaste"
