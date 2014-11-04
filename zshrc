@@ -5,13 +5,13 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="af-magic"
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="false"
 
 # Uncomment this to disable bi-weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
+# DISABLE_AUTO_UPDATE="false"
 
 # Uncomment to change how often before auto-updates occur? (in days)
 export UPDATE_ZSH_DAYS=1
@@ -114,6 +114,11 @@ source $ZSH/oh-my-zsh.sh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+PATH=$PATH:$HOME/.nvm/v0.10.26/bin/node # Fixes node-gyp error.
+
 # Load and run compinit
 autoload -U compinit
 compinit -i
+
+alias gphm="git push heroku master"
+alias bower='noglob bower'
