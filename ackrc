@@ -22,3 +22,7 @@
 --type-set=haml=.haml
 
 --ignore-dir=fixtures
+
+## twig
+--type-set
+twig=.twig
