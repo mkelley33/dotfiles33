@@ -1,0 +1,33 @@
+{
+	"installed_packages":
+	[
+		"Alignment",
+		"BufferScroll",
+		"CSS Format",
+		"CSScomb",
+		"Emmet",
+		"FavoriteFiles",
+		"Git",
+		"GitGutter",
+		"HTML-CSS-JS Prettify",
+		"HTMLBeautify",
+		"Javascript Beautify",
+		"JavaScript Completions",
+		"JSON Reindent",
+		"LESS",
+		"Markdown Preview",
+		"Path Tools",
+		"PHP-Twig",
+		"Review Myself",
+		"Schemr",
+		"Seti_UI",
+		"String 2 Lower Hyphen",
+		"Sublime Bookmarks",
+		"Terminal",
+		"Themr",
+		"Todo",
+		"TodoReview",
+		"TrailingSpaces",
+		"TypeTodo"
+	]
+}

@@ -1,0 +1,32 @@
+[
+    {
+        "command": "jump_back",
+        "keys": [
+            "command+shift+b"
+        ]
+    },
+    {
+        "command": "jump_forward",
+        "keys": [
+            "command+alt+b"
+        ]
+    },
+    {
+        "args": {
+            "extend": false,
+            "to": "hardeol"
+        },
+        "command": "move_to",
+        "keys": [
+            "ctrl+e"
+        ]
+    },
+    {
+        "command": "goto_definition",
+        "keys": [
+            "shift+command+m"
+        ]
+    },
+    { "keys": ["ctrl+shift+t"], "command": "delete_trailing_spaces" },
+    { "keys": ["ctrl+shift+d"], "command": "toggle_trailing_spaces" }
+]

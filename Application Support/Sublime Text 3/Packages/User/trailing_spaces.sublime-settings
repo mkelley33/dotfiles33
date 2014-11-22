@@ -1,0 +1,7 @@
+{
+	"ensure_newline_at_eof_on_save": true,
+	"trailing_spaces_highlight_color": "invalid",
+	"trailing_spaces_include_current_line": false,
+	"trailing_spaces_modified_lines_only": false,
+	"trailing_spaces_save_after_trim": true
+}
