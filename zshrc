@@ -49,10 +49,10 @@ done
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bower brew bundler capistrano copydir copyfile django
-  fabric gem git git-extras gitignore heroku node npm nvm pip
-  postgres python rails rsync ruby safe-paste ssh-agent tmux
-  tmuxinator virtualenv virtualenvwrapper vundle xcode)
+plugins=(bower brew bundler copydir copyfile 
+  gem git git-extras gitignore heroku node npm nvm
+  postgres rsync ruby safe-paste ssh-agent 
+  vundle xcode)
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -84,7 +84,7 @@ ps -x | grep "^ *${SSH_AGENT_PID}" | grep ssh-agent$ > /dev/null || {
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='atom'
+  export EDITOR='subl -w'
 fi
 
 # Compilation flags
@@ -110,11 +110,10 @@ export LANG="en_US"
 export LC_ALL="en_US.UTF-8"
 export TZ=America/New_York
 
-source $ZSH/oh-my-zsh.sh
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.nvm/v0.10.33/bin/node # Fixes node-gyp error.
 
-PATH=$PATH:$HOME/.nvm/v0.10.26/bin/node # Fixes node-gyp error.
+source $ZSH/oh-my-zsh.sh
 
 # Load and run compinit
 autoload -U compinit
@@ -122,3 +121,5 @@ compinit -i
 
 alias gphm="git push heroku master"
 alias bower='noglob bower'
+
+nvm use v0.10.33
