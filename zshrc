@@ -114,6 +114,11 @@ source $ZSH/oh-my-zsh.sh
 autoload -U compinit
 compinit -i
 
+# ZSH treats # as an extended globbing symbol. If using bower, disable globbing.
+# http://zsh.sourceforge.net/Guide/zshguide05.html
+# bower install --save baz/foobar#some-branch
+# zsh: no matches found: baz/foobar#some-branch
+# The alias below resolves the error above when using ZSH and bower.
 alias bower='noglob bower'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
