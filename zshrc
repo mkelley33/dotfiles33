@@ -117,3 +117,4 @@ compinit -i
 alias bower='noglob bower'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export NVM_SYMLINK_CURRENT=true
