@@ -4,6 +4,9 @@
 
 [core]
 	whitespace = trailing-space,space-before-tab
+	editor = vim
+	ignore = /Users/mkelley33/Projects/mkelley33/git/dotfiles33/gitignores/global.gitignore
+	excludesfile = /Users/mkelley33/Projects/mkelley33/git/dotfiles33/gitignores/global.gitignore
 [color]
 	ui = auto
 [advice]
