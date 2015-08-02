@@ -49,10 +49,8 @@ done
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bower brew bundler copydir copyfile 
-  gem git git-extras gitignore heroku node npm nvm
-  postgres rsync ruby safe-paste ssh-agent 
-  vundle xcode)
+plugins=(bower brew bundler copydir copyfile osx gem git git-extras gitignore
+  heroku node npm nvm postgres rsync ruby safe-paste ssh-agent vundle xcode)
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
