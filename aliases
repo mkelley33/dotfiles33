@@ -31,3 +31,4 @@ alias prc="pry -r config/environment.rb"
 alias t=tmux
 alias zc="atom ~/.zshrc"
 alias utc="echo `date -uj` `date +%z` | pbcopy && pbpaste"
+alias gphm="git push heroku master"

@@ -114,7 +114,6 @@ source $ZSH/oh-my-zsh.sh
 autoload -U compinit
 compinit -i
 
-alias gphm="git push heroku master"
 alias bower='noglob bower'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
