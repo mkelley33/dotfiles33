@@ -108,9 +108,6 @@ export LANG="en_US"
 export LC_ALL="en_US.UTF-8"
 export TZ=America/New_York
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.nvm/v0.10.33/bin/node # Fixes node-gyp error.
-
 source $ZSH/oh-my-zsh.sh
 
 # Load and run compinit
@@ -120,4 +117,4 @@ compinit -i
 alias gphm="git push heroku master"
 alias bower='noglob bower'
 
-nvm use v0.10.33
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
