@@ -13,14 +13,12 @@ vnoremap ;; <esc>
 " other distros), the system vimrc does this early on, so you actually need to 
 " 'filetype off' before 'filetype plugin indent on' to force reloading.
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
 filetype plugin on
 
 " Remove vi compatibility. Why?
 " Acccording to Steve Losh you gain functionality by do this.
 set nocompatible
-set foldmethod=indent
+set foldmethod=nofold
 " Not sure what modelines are, but apparently they open a security
 " exploit so lets kill 'em.
 set modelines=0
@@ -63,7 +61,6 @@ syntax on
 "set transp=9
 set t_Co=256
 set background=dark
-colorscheme molokai
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
 set guifont=Menlo:h12
 " turn off blinking cursor in command mode
