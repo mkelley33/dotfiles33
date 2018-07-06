@@ -1,5 +1,4 @@
 # source this in .zshrc or .bashrc
-alias ackk=ack_alias
 alias bdu="brew doctor && brew update"
 alias cpdate="date|pbcopy"
 alias cpip="ifconfig | grep en1 -A1 | grep -Eo 'inet\ [1-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -c 6- | xargs -I {} echo {}:'3000' | pbcopy"
@@ -8,34 +7,42 @@ alias cptime="date +'%r'|pbcopy"
 alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias df33="code ~/Projects/MK/git/dotfiles33/."
+alias dots="code ~/Projects/MK/git/dotfiles33/."
 alias mk33="code ~/Projects/MK/git/mkelley33/."
 alias duh='du -cms * | sort -rn'
+alias ez="code ~/.zshrc"
 alias g="git"
 alias gcb="git checkout -b"
 alias gd="git diff"
-alias gg="g st -s"
+alias gss="g st -s"
 alias gs="git stash"
+alias gphm="git push heroku master"
+alias gbc="git branch --contains"
+alias grs="git reflog show"
 alias h="history"
-alias io="atom"
-alias ioo="atom ."
 alias j="jobs"
+
+# Copy common apple keys to clipboard
 alias kcmd="echo '⌘'|pbcopy"
 alias kopt="echo '⌥'|pbcopy"
 alias kshift="echo '⇧'|pbcopy"
+
 alias lss="ls -lAhFtG"
+
+# List symlinks
 alias lns='la|ack "\-\>"'
-alias omz="code ~/.oh-my-zsh"
-alias p="cd ~/Projects/mkelley33/git/"
-alias prc="pry -r config/environment.rb"
-alias zc="code ~/.zshrc"
-alias utc="echo `date -uj` `date +%z` | pbcopy && pbpaste"
-alias gphm="git push heroku master"
-alias gbc="git branch --contains"
-alias sz="source ~/.zshrc"
-alias ez="code ~/.zshrc"
 alias ni="npm i"
 alias nid="npm i -D"
 alias nr="npm run start"
+
+# Don't run any npm scripts
 alias nir="npm i --ignore-scripts"
 alias nrv="npm run start -- --verbose"
+alias omz="code ~/.oh-my-zsh"
+alias p="~/Projects/MK/git/"
+alias prc="pry -r config/environment.rb"
+alias sal=showAliases
+alias sap=showAppStoreApps
+alias sac=showLaunchctls
+alias sz="source ~/.zshrc"
+alias utc="echo `date -uj` `date +%z` | pbcopy && pbpaste"

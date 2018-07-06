@@ -1,3 +1,53 @@
-ack_alias() {
-  alias|ack "^$1"
+#!/usr/local/bin/zsh
+
+function showAliases { alias|ag "^$1" }
+
+function showLaunchctls {
+    LaunchctlPATHS=( \
+        ~/Library/LaunchAgents \
+        /Library/LaunchAgents \
+        /Library/LaunchDaemons \
+        /System/Library/LaunchAgents \
+        /System/Library/LaunchDaemons \
+    )
+
+    for curPATH in "${LaunchctlPATHS[@]}"
+    do
+        grep -r "$curPATH" -e "$1"
+    done
+    return 0;
 }
+
+function showAppStoreApps {
+  find /Applications -path '*Contents/_MASReceipt/receipt' -maxdepth 4 -print |\sed \
+    's#.app/Contents/_MASReceipt/receipt#.app#g;s#/Applications/##'|sort
+}
+
+function showAllApps {
+  if [[ "$1" = true ]]; then
+    la /Applications/ && la ~/Applications/
+  else
+    ls /Applications/ && ls ~/Applications/
+  fi
+}
+
+function showDownloadRecords {
+  sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* \
+    'select LSQuarantineDataURLString, * from LSQuarantineEvent'|sort
+}
+
+#deleteDownloadRecords () {
+#  sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
+#}
+
+#findBrewApps () {
+#
+#}
+
+#findCaskApps () {
+#
+#}
+
+#findBrewAndCaskApps () {
+#
+#}
