@@ -16,52 +16,50 @@ CASE_SENSITIVE="false"
 # Uncomment to change how often before auto-updates occur? (in days)
 export UPDATE_ZSH_DAYS=1
 
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+export DISABLE_AUTO_TITLE="false"
 
 # Uncomment following line if you want to disable command autocorrection
-DISABLE_CORRECTION="true"
+export DISABLE_CORRECTION="false"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
+export COMPLETION_WAITING_DOTS="true"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
 # much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="true"
+export DISABLE_UNTRACKED_FILES_DIRTY="false"
 
-# Uncomment following line if you want to  shown in the command execution time stamp
+# Comment following line if you don't want shown in the command execution time stamp
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
 # https://xkcd.com/1179/
-HIST_STAMPS="yyyy-mm-dd"
+export HIST_STAMPS="yyyy-mm-dd"
 
-# Aliases, functions, and maybe some other stuff are stored in other dotfiles so
-# source each of the them:
-other_dotfiles=(".zsh_functions" ".aliases" ".jwtrc" ".env" ".workrc")
+# Dot files that contain aliases, functions, etc. (Examples: ".django-aliases" ".workrc"):
+other_dotfiles=(".zsh_functions" ".aliases" ".jwtrc" ".env")
+echo "Sourcing dotfiles"
+echo "-----------------"
 for f in $other_dotfiles; do
-  [[ -f ~/$f ]] && . ~/$f #&& echo "loading dotfiles ${f}"
+  [[ -f ~/$f ]] && . ~/$f && echo "${f}"
 done
+echo "-----------------"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(antigen bower brew brew-cask bundler copydir copyfile osx gem git git-extras gitignore heroku json_tools node
-  npm postgres rsync ruby safe-paste ssh-agent vundle xcode vagrant django mercurial pep8 pip pylint
-  virtualenvwrapper yarn zsh-256color you-should-use zsh-brew-services terminal-workload-report zsh-snippets zsh-nvm)
+plugins=(antigen brew brew-cask bundler copydir copyfile osx gem git git-extras gitignore heroku json_tools node
+  npm postgres rsync ruby safe-paste ssh-agent vundle xcode yarn zsh-256color you-should-use zsh-brew-services 
+  terminal-workload-report zsh-snippets zsh-nvm)
 
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_PROMPT_SEPARATE_LINE=false
-SPACESHIP_PROMPT_SYMBOL=∞
-SPACESHIP_PROMPT_DEFAULT_PREFIX="∵ "
-SPACESHIP_TIME_SHOW=true
+export SPACESHIP_PROMPT_ADD_NEWLINE=false
+export SPACESHIP_PROMPT_SEPARATE_LINE=false
+export SPACESHIP_PROMPT_SYMBOL=#
+export SPACESHIP_PROMPT_DEFAULT_PREFIX="∵ "
+export SPACESHIP_TIME_SHOW=true
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export MANPATH="/usr/local/man:$MANPATH"
 
 ## SSH fixes
 
@@ -80,13 +78,15 @@ ps -x | grep "^ *${SSH_AGENT_PID}" | grep ssh-agent$ > /dev/null || {
   start_agent;
 }
 
+eval $(ssh-agent)
+
 ## end SSH fixes
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='atom -w'
+  export EDITOR='code -w'
 fi
 
 # Compilation flags
@@ -97,14 +97,8 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 export DEFAULT_USER="mkelley33"
 
-export PATH=/usr/local/opt/python/libexec/bin:$PATH
-
-export PIP_REQUIRE_VIRTUALENV=false
 export PROJECTS=$HOME/Projects/MK/git
-export DOTFILES=$PROJECTS/dotfiles33
-
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+export DOTS=$PROJECTS/dotfiles33
 
 # Command-line fu search util in color - https://github.com/ncrocfer/clf
 export CLF_COLOR=1
@@ -112,8 +106,6 @@ export CLF_COLOR=1
 # Projects
 export MK=$HOME/Projects/MK/git
 export OPP=$HOME/Projects/OPP
-
-export PYCHARM_VM_OPTIONS=$HOME/pycharm.vmoptions
 
 # https://unix.stackexchange.com/questions/273861/unlimited-history-in-zsh
 export HISTFILE="$HOME/.zsh_history"
@@ -135,32 +127,20 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 # Make some commands not show up in history
-export HISTIGNORE="ls:la:cd:cd -:cd --:pwd:exit:date:* --help"
+export HISTIGNORE="ls:la:cd:cd -:cd -2:cd -3:cd:--:pwd:exit:date:*:--help:-h:man"
 
 # Prefer US English and use UTF-8
-export LANG="en_US"
-export LC_ALL="en_US.UTF-8"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 export TZ=America/New_York
 
-# Load and run compinit
-autoload -U compinit
-compinit -i
-
-# ZSH treats # as an extended globbing symbol. If using bower, disable globbing.
-# http://zsh.sourceforge.net/Guide/zshguide05.html
-# bower install --save baz/foobar#some-branch
-# zsh: no matches found: baz/foobar#some-branch
-# The alias below resolves the error above when using ZSH and bower.
-alias bower='noglob bower'
-
-export NVM_SYMLINK_CURRENT=true
-
 # Required for https://github.com/swagger-api/swagger-codegen
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_152`
 export PATH=${JAVA_HOME}/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
+export NVM_SYMLINK_CURRENT=true
 export NVM_DIR="/Users/mkelley33/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
@@ -198,45 +178,9 @@ export PATH="/usr/local/opt/postgresql@9.4/bin:$PATH"
 # iftop: display bandwidth usage on an interface
 alias iftop=/usr/local/opt/iftop/sbin/iftop
 
-# brew install zsh-history-substring-search
-# echo 'source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh' >> ~/.zshrc
-# type any part of any command, press up / down arrows, see matching commands in your history, and smile
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-
-# The following lines were added by compinstall
-
-zstyle ':completion:*' completer _expand _complete _ignored _approximate
-zstyle ':completion:*' completions '#'
-zstyle ':completion:*' glob '_'
-zstyle ':completion:*' substitute '%'
-zstyle :compinstall filename '/Users/mkelley33/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-launchctlFind () {
-    LaunchctlPATHS=( \
-        ~/Library/LaunchAgents \
-        /Library/LaunchAgents \
-        /Library/LaunchDaemons \
-        /System/Library/LaunchAgents \
-        /System/Library/LaunchDaemons \
-    )
-
-    for curPATH in "${LaunchctlPATHS[@]}"
-    do
-        grep -r "$curPATH" -e "$1"
-    done
-    return 0;
-}
-export PATH="/usr/local/opt/berkeley-db@4/bin:$PATH"
-
 export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
 source "/Users/mkelley33/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
-
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
