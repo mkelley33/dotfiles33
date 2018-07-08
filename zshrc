@@ -36,15 +36,6 @@ export DISABLE_UNTRACKED_FILES_DIRTY="false"
 # https://xkcd.com/1179/
 export HIST_STAMPS="yyyy-mm-dd"
 
-# Dot files that contain aliases, functions, etc. (Examples: ".django-aliases" ".workrc"):
-other_dotfiles=(".zsh_functions" ".aliases" ".jwtrc" ".env")
-echo "Sourcing dotfiles"
-echo "-----------------"
-for f in $other_dotfiles; do
-  [[ -f ~/$f ]] && . ~/$f && echo "${f}"
-done
-echo "-----------------"
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -99,6 +90,7 @@ export DEFAULT_USER="mkelley33"
 
 export PROJECTS=$HOME/Projects/MK/git
 export DOTS=$PROJECTS/dotfiles33
+export DROPBOX_PATH=$HOME/Dropbox
 
 # Command-line fu search util in color - https://github.com/ncrocfer/clf
 export CLF_COLOR=1
@@ -139,6 +131,15 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_152`
 export PATH=${JAVA_HOME}/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
+
+# Dot files that contain aliases, functions, etc. (Examples: ".django-aliases" ".workrc"):
+other_dotfiles=(".zsh_functions" ".aliases" ".jwtrc" ".env")
+echo "Sourcing dotfiles"
+echo "-----------------"
+for f in $other_dotfiles; do
+  [[ -f ~/$f ]] && . ~/$f && echo "${f}"
+done
+echo "-----------------"
 
 export NVM_SYMLINK_CURRENT=true
 export NVM_DIR="/Users/mkelley33/.nvm"

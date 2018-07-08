@@ -1,5 +1,7 @@
 #!/usr/local/bin/zsh
 
+export SEPARATOR="-------------------------------------------------------------------------"
+
 function showAliases { alias|ag "^$1" }
 
 function showLaunchctls {
@@ -18,17 +20,60 @@ function showLaunchctls {
     return 0;
 }
 
+typeset -A fileNameFunctionPairs
+fileNameFunctionPairs=( \
+    "launch-ctls" showLaunchctls \
+    "app-store-apps" showAppStoreApps \
+    "all-apps" showAllApps \
+    "all-apps-verbose" showAllAppsVerbose \
+    "download-records" showDownloadRecords \
+)
+
+function writeFile {
+    FILE_NAME=$1
+    FILE_PATH="${DROPBOX_PATH}/${FILE_NAME}.md"
+
+    echo ${SEPARATOR}
+    echo "Writing: ${FILE_PATH}"
+
+    echo "$($2)" > ${FILE_PATH}
+
+    FILE_NAME_SHASUM="${DROPBOX_PATH}/${FILE_NAME}-shasum.md"
+    touch ${FILE_NAME_SHASUM}
+
+    FILE_SHASUM="$(shasum ${FILE_PATH})"
+    echo ${FILE_SHASUM} > ${FILE_NAME_SHASUM}
+    echo "Written: ${FILE_NAME_SHASUM}: ${FILE_SHASUM}"
+
+    echo ${SEPARATOR}
+    echo
+    return 0;
+}
+
+function writeAllFiles {
+    for fileName func in ${(kv)fileNameFunctionPairs}; do
+        writeFile "${fileName}" ${func}
+    done
+    return 0;
+}
+
 function showAppStoreApps {
   find /Applications -path '*Contents/_MASReceipt/receipt' -maxdepth 4 -print |\sed \
     's#.app/Contents/_MASReceipt/receipt#.app#g;s#/Applications/##'|sort
+    return 0;
 }
 
 function showAllApps {
-  if [[ "$1" = true ]]; then
-    la /Applications/ && la ~/Applications/
-  else
-    ls /Applications/ && ls ~/Applications/
-  fi
+    if [[ $1 == true ]]; then
+        ls -lah /Applications/ && ls -lah ~/Applications/
+    else
+        ls /Applications/ && ls ~/Applications/
+    fi
+  return 0;
+}
+
+function showAllAppsVerbose {
+    showAllApps true
 }
 
 function showDownloadRecords {
