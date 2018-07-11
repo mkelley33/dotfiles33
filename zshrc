@@ -86,10 +86,13 @@ export ARCHFLAGS="-arch x86_64"
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
+export USER_FULL_NAME="Michaux Kelley"
+export USER_EMAIL="michauxkelley@gmail.com"
 export DEFAULT_USER="mkelley33"
 
-export PROJECTS=$HOME/Projects/MK/git
-export DOTS=$PROJECTS/dotfiles33
+export PROJECTS=$HOME/projects/mk/git
+export ME=$PROJECTS/me
+export DOTS=$ME/dotfiles33
 export DROPBOX_PATH=$HOME/Dropbox
 
 # Command-line fu search util in color - https://github.com/ncrocfer/clf
