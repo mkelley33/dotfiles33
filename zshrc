@@ -45,7 +45,7 @@ plugins=(antigen brew brew-cask bundler copydir copyfile osx gem git git-extras 
 
 export SPACESHIP_PROMPT_ADD_NEWLINE=false
 export SPACESHIP_PROMPT_SEPARATE_LINE=false
-export SPACESHIP_PROMPT_SYMBOL=#
+export SPACESHIP_CHAR_SYMBOL="# "
 export SPACESHIP_PROMPT_DEFAULT_PREFIX="∵ "
 export SPACESHIP_TIME_SHOW=true
 
@@ -88,7 +88,7 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 export USER_FULL_NAME="Michaux Kelley"
 export USER_EMAIL="michauxkelley@gmail.com"
-export DEFAULT_USER="mkelley33"
+export DEFAULT_USER="ccha0s"
 
 export PROJECTS=$HOME/projects/mk/git
 export ME=$PROJECTS/me
@@ -122,7 +122,7 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 # Make some commands not show up in history
-export HISTIGNORE="ls:la:cd:cd -:cd -2:cd -3:cd:--:pwd:exit:date:*:--help:-h:man"
+export HISTORY_IGNORE="ls|la|cd|cd -|cd -2|cd -3|cd --|pwd|exit|date|man"
 
 # Prefer US English and use UTF-8
 export LC_ALL=en_US.UTF-8
@@ -130,7 +130,7 @@ export LANG=en_US.UTF-8
 export TZ=America/New_York
 
 # Required for https://github.com/swagger-api/swagger-codegen
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_152`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_172`
 export PATH=${JAVA_HOME}/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
@@ -145,7 +145,7 @@ done
 echo "-----------------"
 
 export NVM_SYMLINK_CURRENT=true
-export NVM_DIR="/Users/mkelley33/.nvm"
+export NVM_DIR="/Users/${DEFAULT_USER}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # place this after nvm initialization!
@@ -187,4 +187,6 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
-source "/Users/mkelley33/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
